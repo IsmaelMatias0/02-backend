@@ -1,0 +1,10 @@
+const express= require('express')
+const sequelize= require('./db')
+const app = express()
+app.use(express.json())
+sequelize.authenticate()
+.then(() => console.log('conectado'))
+.catch(err => console.error('intenta de nuevo'))
+app.listen(3000,()=>{
+    console.log('DiabloDiosmio')
+})
