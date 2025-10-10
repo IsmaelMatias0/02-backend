@@ -1,10 +1,7 @@
-const express= require('express')
-const sequelize= require('./db')
-const app = express()
-app.use(express.json())
+import express from "express";
+import sequelize from "./db.js";
+const app = express();
+const PORT = process.env.PORT || 3000;app.use(express.json());
 sequelize.authenticate()
-.then(() => console.log('conectado'))
-.catch(err => console.error('intenta de nuevo'))
-app.listen(3000,()=>{
-    console.log('DiabloDiosmio')
-})
+  .then(() => console.log("Conexión a PostgreSQL en Railway exitosa"))
+  .catch(err => console.error("Error al conectar con la BD:", err));
